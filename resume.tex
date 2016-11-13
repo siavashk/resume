@@ -22,7 +22,7 @@
 
 \usepackage[paper=letterpaper,
             %includefoot, % Uncomment to put page number above margin
-            marginparwidth=1.2in,     % Length of section titles
+            marginparwidth=1.0in,     % Length of section titles
             marginparsep=.05in,       % Space between titles and text
             margin=1in,               % 1 inch margins
             includemp]{geometry}
@@ -33,7 +33,7 @@
 
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
-%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfootoffset{\marginparsep+\marginparwidth}
 \newlength{\footpageshift}
@@ -52,11 +52,11 @@
             anchorcolor=darkblue,citecolor=darkblue}
 
 \newcommand{\makeheading}[2][]%
-        {\hspace*{-\marginparsep minus \marginparwidth}%
-         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
-                 \rule{\columnwidth}{1pt}%
-         \end{minipage}}
+       {\hspace*{-\marginparsep minus \marginparwidth}%
+        \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+            {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                \rule{\columnwidth}{1pt}
+        \end{minipage}}
 
 \renewcommand{\section}[2]%
         {\pagebreak[3]\vspace{1.3\baselineskip}%
@@ -92,9 +92,21 @@
 \providecommand*\email[1]{\href{mailto:#1}{#1}}
 \providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em\TeX}}
 \providecommand\Matlab{\textsc{Matlab}}
+\usepackage{graphicx}
+\newcommand{\Csharp}{{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \begin{document}
 \makeheading{Siavash~Khallaghi}
+\blfootnote{For a full list of publications, projects, codes and invited talks please visit my website.}
 
 \section{Contact Information}
 \newlength{\rcollength}\setlength{\rcollength}{1.85in}%
@@ -105,6 +117,23 @@
 Vancouver, BC, Canada V6B 1H7    & \textit{WWW:}\href{http://www.ece.ubc.ca/~siavashk/}{ece.ubc.ca/{$\sim$}siavashk}\\
 \end{tabular}
 
+\section{Experience}
+Machine Learning Scientist and Software Engineer \\\\
+{Copypants Creator Technologies} \hfill \textbf{2015-Present} \\
+\href{https://www.copypants.com/}
+Languages: Javascript, Lua, \CC and Python \\
+Frameworks: Node, Torch, Caffe and Tensorflow \\
+Projects in Production:
+\begin{innerlist}
+  \item Content-based Image Retrieval Using ConvNets
+  \item Automatitic Image Captioning Using LSTMs
+  \item Topic Discovery for Websites Using LDA \\
+\end{innerlist}
+
+{LightPath Imaging Labs} \hfill \textbf{2014-2015} \\
+Languages: \Csharp, \CC~and Python \\
+Frameworks: .NET, ITK and VTK \\
+Project: Under Non Disclosure Agreement
 
 \section{Education}
 Ph.D.
@@ -119,110 +148,22 @@ M.Sc.
 
 B.Sc.
 				\href{http://aut.ac.ir/www/aut/main/}{\textbf{Amirkabir~University~of~Technology}} \hfill \textbf{2004-2008}\\
-        \href{http://ee.aut.ac.ir/autcms/home.htm?depurl=electrical-engineering&lang=en}{Electrical Engineering} \\
+        \href{http://ee.aut.ac.ir/autcms/home.htm?depurl=electrical-engineering&lang=en}{Electrical Engineering}
 
 \section{Selected Publications}
 \begin{bibsection}
 		\item Khallaghi~\textit{et.~al.}, ``\textit{Statistical Biomechanical Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}'', \textbf{IEEE TMI}, 2015
-	  \item Khallaghi~\textit{et.~al.}, ``\textit{Biomechanically Constrained Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}'', \textbf{IEEE TMI}, 2015\\
+	  \item Khallaghi~\textit{et.~al.}, ``\textit{Biomechanically Constrained Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}'', \textbf{IEEE TMI}, 2015
 	  \item Khallaghi~\textit{et.~al.}, ``\textit{A 2D-3D Registration Framework for Freehand TRUS-Guided Prostate Biopsy}'', \textbf{MICCAI}, 2015
 \end{bibsection}
 
 \section{Honors and Awards}
-\href{https://www.grad.ubc.ca/awards/graduate-support-initiative-gsi-awards}{Faculty of Applied Science Graduate Award} 2011-2014
-
-\halfblankline
-
-\href{http://www.grad.ubc.ca/awards/international-partial-tuition-scholarship}{UBC International Partial Tuition Scholarship} 2010-2013
-
-\halfblankline
-
-\href{http://www.queensu.ca/sgs/forstudents/prospectivestudents/funding.html#qgradawards}{Queen�s University Graduate Award} 2008-2009
-
-\halfblankline
-
-\href{http://www.queensu.ca/studentawards/financialassistance/generalbursary.html}{Queen�s University General Bursary} 2008
-
-
-\section{Teaching Experience}
-\href{http://www.queensu.ca/}{\textbf{Queen's~University}},
-Kingston, ON, Canada
-\begin{outerlist}
-
-\item[] \textbf{Teaching Assistant}%
-    \begin{innerlist}
-            \item \href{https://www.ece.ubc.ca/course/eece-280}{EECE~280: Electrical and Computer Engineering Laboratory I}\hfill Winter~2011
-        \item \href{http://www.ece.queensu.ca/Current-Students/Undergraduate/Course-Summaries/ELEC-422.html}{ELEC~422: Communications Signal Processing}\hfill Spring 2009
-    \end{innerlist}
-    \begin{innerlist}
-        \item \href{http://www.ece.queensu.ca/Current-Students/Undergraduate/Course-Summaries/ELEC-221.html}{ELEC~221: Electrical Circuits}\hfill Winter 2009
-    \end{innerlist}
-\end{outerlist}
-
-\section{Hardware and Software Skills}
-%
-\href{http://ultrasonix.com/}{Ultrasonix Ultrasound Libraries}
-%
-\begin{innerlist}
-    \item \href{http://ultrasonix.com/wikisonix/index.php?title=Ulterius}{Ulterius},
-    \href{http://ultrasonix.com/wikisonix/index.php?title=Texo}{Texo},
-    \href{http://ultrasonix.com/wikisonix/index.php/Amplio}{Amplio}
-\end{innerlist}
-
-\halfblankline
-
-Computer Programming:
-%
-\begin{innerlist}
-    \item CMake, C$+$$+$, CUDA, Perl, \Matlab
-    \item Software Packages: 3D Slicer, Insight Segmentation and Registration Toolkit (ITK),
-    Visualization Toolkit (VTK), Math Kernel Library (MKL),
-\end{innerlist}
-
-\halfblankline
-
-Version Control and Software Configuration Management:
-%
-\begin{innerlist}
-    \item Git, CVS and SVN
-\end{innerlist}
-
-\halfblankline
-
-\href{http://www.mathworks.com/products/matlab/}{\Matlab} skill set:
-%
-\begin{innerlist}
-    \item Image processing, linear algebra, Fourier transforms,
-        nonlinear numerical methods, polynomials, statistics,
-        $N$-dimensional filters, visualization
-
-    \item Toolboxes: image processing, communications, control system, filter design,
-        genetic algorithm and direct search, signal processing, system
-        identification
-\end{innerlist}
-
-\halfblankline
-
-Productivity Applications:
-%
-\begin{innerlist}
-    \item \TeX{} (\LaTeX{}, \BibTeX{}), JabRef
-\end{innerlist}
-
-\halfblankline
-
-Operating Systems:
-%
-\begin{innerlist}
-    \item Microsoft Windows family, Ubuntu and other Linux distributions.
-\end{innerlist}
+\href{https://www.grad.ubc.ca/awards/graduate-support-initiative-gsi-awards}{UBC Faculty of Applied Science Graduate Award} \hfill \textbf{2010-2015}\\
+\href{http://www.queensu.ca/studentawards/financialassistance/generalbursary.html}{Queen's University General Bursary} \hfill \textbf{2008-2010}
 
 \section{References Available to Contact}
-%
-\href
-{http://www.ece.ubc.ca/~purang/}
-{\textbf{Dr.~Purang~Abolmaesumi}}
-(e-mail:~\href{mailto:purang@ece.ubc.ca}{purang@ece.ubc.ca}; phone:~(604)827-4741)
+\href{http://www.ece.ubc.ca/~purang/}{\textbf{Dr.~Purang~Abolmaesumi}}
+(e-mail:~\href{mailto:purang@ece.ubc.ca}{purang@ece.ubc.ca}; phone:~604-827-4741)
 %
 \begin{innerlist}
     \item Professor,
@@ -232,59 +173,7 @@ Operating Systems:
 
     \item[$\diamond$] Kaiser 4052, 2332 Main Mall, Vancouver, BC, Canada, V6T 1Z4
 
-    \item[$\star$] \emph{Dr.~Abolmaesumi is my Ph.D. and was my M.Sc. adviser.}
-\end{innerlist}
-
-\halfblankline
-
-\href
-{http://www.ece.ubc.ca/~rohling/}
-{\textbf{Dr.~Robert~Rohling}}
-(e-mail:~\href{mailto:rohling@ece.ubc.ca}{rohling@ece.ubc.ca}; phone:~((604)822-2045)
-%
-\begin{innerlist}
-    \item Professor,
-        \href{http://www.ece.ubc.ca/}{Electrical and Computer
-        Engineering},
-        \href{http://www.ubc.ca/}{University~of~British~Columbia}
-
-    \item[$\diamond$] Kaiser 4052, 2332 Main Mall, Vancouver, BC, Canada, V6T 1Z4
-
-    \item[$\star$] \emph{I have taken courses with Dr.~Rohling during my PhD.}
-\end{innerlist}
-
-\halfblankline
-
-\href
-{http://www.cs.queensu.ca/~pmousavi}
-{\textbf{Dr.~Parvin~Mousavi}}
-(e-mail:~\href{mailto:pmousavi@cs.queensu.ca}{pmousavi@cs.queensu.ca}; phone:~(613)533-6000)
-%
-\begin{innerlist}
-    \item Professor,
-        \href{http://www.cs.queensu.ca/}{School of Computing},
-        \href{http://www.queensu.ca/}{Queen's~University}
-
-    \item[$\diamond$] Goodwin Hall, 25 Union Street, Kingston, ON, Canada, K7L 3N6
-
-    \item[$\star$] \emph{Dr.~Mousavi was my M.Sc. co-adviser.}
-\end{innerlist}
-
-\halfblankline
-
-\href
-{http://research.cs.queensu.ca/~gabor/}
-{\textbf{Dr.~Gabor~Fichtinger}}
-(e-mail:~\href{mailto:gabor@cs.queensu.ca}{gabor@cs.queensu.ca}; phone:~(613)533-3258)
-%
-\begin{innerlist}
-    \item Professor,
-        \href{http://www.cs.queensu.ca/}{School of Computing},
-        \href{http://www.queensu.ca/}{Queen's~University}
-
-    \item[$\diamond$] Goodwin Hall, 25 Union Street, Kingston, ON, Canada, K7L 3N6
-
-    \item[$\star$] \emph{I have joint publications with Dr.~Fichtinger.}
+    \item[$\star$] \emph{Dr.~Abolmaesumi was my Ph.D. and M.Sc. adviser.}
 \end{innerlist}
 
 \end{document}

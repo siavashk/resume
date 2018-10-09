@@ -1,174 +1,237 @@
-\documentclass[10pt]{article}
+%-------------------------
+% Resume in Latex
+% Author : Siavash Khallaghi
+% License : MIT
+%------------------------
 
-\usepackage{calc}
+\documentclass[letterpaper,11pt]{article}
 
-\makeatletter
-\newlength{\bibhang}
-\setlength{\bibhang}{1em}
-\newlength{\bibsep}
- {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
-\newenvironment{bibsection}%
-        {\vspace{-\baselineskip}\begin{list}{}{%
-       \setlength{\leftmargin}{\bibhang}%
-       \setlength{\itemindent}{-\leftmargin}%
-       \setlength{\itemsep}{\bibsep}%
-       \setlength{\parsep}{\z@}%
-        \setlength{\partopsep}{0pt}%
-        \setlength{\topsep}{0pt}}}
-        {\end{list}\vspace{-.6\baselineskip}}
-\makeatother
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
 
-\reversemarginpar
-
-\usepackage[paper=letterpaper,
-            %includefoot, % Uncomment to put page number above margin
-            marginparwidth=1.0in,     % Length of section titles
-            marginparsep=.05in,       % Space between titles and text
-            margin=1in,               % 1 inch margins
-            includemp]{geometry}
-
-\setlength{\parindent}{0in}
-
-\usepackage{paralist}
-
-\usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
-\pagestyle{empty}      % Uncomment this to get rid of page numbers
-\fancyhf{}\renewcommand{\headrulewidth}{0pt}
-\fancyfootoffset{\marginparsep+\marginparwidth}
-\newlength{\footpageshift}
-\setlength{\footpageshift}
-          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
-\lfoot{\hspace{\footpageshift}%
-       \parbox{4in}{\, \hfill %
-                    \arabic{page} of \protect\pageref*{LastPage} % +LP
-%                    \arabic{page}                               % -LP
-                    \hfill \,}}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\usepackage{color,hyperref}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=darkblue,
-            anchorcolor=darkblue,citecolor=darkblue}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-\newcommand{\makeheading}[2][]%
-       {\hspace*{-\marginparsep minus \marginparwidth}%
-        \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-            {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
-                \rule{\columnwidth}{1pt}
-        \end{minipage}}
+\urlstyle{same}
 
-\renewcommand{\section}[2]%
-        {\pagebreak[3]\vspace{1.3\baselineskip}%
-         \phantomsection\addcontentsline{toc}{section}{#1}%
-         \hspace{0in}%
-         \marginpar{
-         \raggedright \scshape #1}#2}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-% An itemize-style list with lots of space between items
-\newenvironment{outerlist}[1][\enskip\textbullet]%
-        {\begin{itemize}[#1]}{\end{itemize}%
-         \vspace{-.6\baselineskip}}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-\newenvironment{lonelist}[1][\enskip\textbullet]%
-        {\vspace{-\baselineskip}\begin{list}{#1}{%
-        \setlength{\partopsep}{0pt}%
-        \setlength{\topsep}{0pt}}}
-        {\end{list}\vspace{-.6\baselineskip}}
-
-\newenvironment{innerlist}[1][\enskip\textbullet]%
-        {\begin{compactitem}[#1]}{\end{compactitem}}
-
-\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
-        {\vspace{-\baselineskip}\begin{compactitem}[#1]}
-        {\end{compactitem}\vspace{-.6\baselineskip}}
-
-\newcommand{\blankline}{\quad\pagebreak[3]}
-\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
-\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
-\newcommand\doi[1]{doi:\doilink{#1}}
-\providecommand*\url[1]{\href{#1}{#1}}
-\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
-\providecommand*\email[1]{\href{mailto:#1}{#1}}
-\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em\TeX}}
-\providecommand\Matlab{\textsc{Matlab}}
-\usepackage{graphicx}
-\newcommand{\Csharp}{{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
-\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
-\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
-
-\newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
 }
 
-\begin{document}
-\makeheading{Siavash Khallaghi}
-\blfootnote{For a full list of publications, projects, codes and invited talks please visit my website.}
-\blfootnote{Additional references are available upon request.}
+\newcommand{\reviewItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
 
-\section{Contact Information}
-\newlength{\rcollength}\setlength{\rcollength}{1.85in}%
-\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
-\href{https://www.clarius.me/}
-{Clarius Mobile Health} & \\
-350-3605 Gilmore Way    & \textit{E-mail:} \email{siavashk@ece.ubc.ca}\\
-Burnaby BC V5G 4X5      & \textit{WWW:}\href{http://www.ece.ubc.ca/~siavashk/}{ece.ubc.ca/{$\sim$}siavashk}\\
-\end{tabular}
+\newcommand{\publicationItem}[4]{
+  \item\small{
+    {#1}{ et al., #2\vspace{-2pt}}{, \textit{#3}\vspace{-2pt}}{, #4\vspace{-2pt}}
+  }
+}
+
+\newcommand{\educationSubheading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt} \\\vspace{4pt}\underline{\small Thesis}: \small #5
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\publicationSubheadingListStart}{\begin{enumerate}[leftmargin=*]}
+\newcommand{\publicationSubheadingListEnd}{\end{enumerate}}
+\newcommand{\publicationListStart}{\begin{enumerate}}
+\newcommand{\publicationListEnd}{\end{enumerate}\vspace{-5pt}}
+
+\newcommand{\publicationSubItem}[4]{\publicationItem{#1}{#2}{#3}{#4}\vspace{-4pt}}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://sourabhbajaj.com/}{\Large Siavash Khallaghi}} & Email : \href{mailto:khallagh65@gmail.com}{khallagh65@gmail.com}\\
+\end{tabular*}
+
+\section{Professional Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Research}{Registration, Medical Image Processing, Computer Vision, Machine Learning}
+    \resumeSubItem{Languages}{\textit{Experienced}: C++, Javascript, \textit{Familiar}: Python}
+    \resumeSubItem{Frameworks}{\textit{Experienced}: Insight Toolkit (ITK), Qt, Node, \textit{Familiar}: Tensorflow}
+    \resumeSubItem{Version Control and Project Configuration}{Git, CMake}
+  \resumeSubHeadingListEnd
 
 \section{Experience}
-Machine Learning Scientist and Software Engineer \\\\
-\href{https://www.clarius.me/}{Clarius Mobile Health} \hfill \textbf{2017-Present} \\
-\href{https://www.copypants.com/}{Copypants Creator Technologies} \hfill \textbf{2015-2017} \\
-{LightPath Imaging Labs} \hfill \textbf{2014-2015}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Clarius Mobile Health}{Vancouver, BC}
+      {Research Engineer}{March 2017 - Present}
+      \resumeItemListStart
+        \resumeItem{Machine Learning}
+          {Automatic nerve segmentation in progress}
+        \resumeItem{Image Processing}
+          {Automatic follicle/bladder segmentation}
+        \resumeItem{Software Development}
+        {App development with C++11, boost, Qt, CMake, cross platform}
+      \resumeItemListEnd
 
-\section{Skills}
-\CC, Python, Javascript\\
-Qt, Tensorflow, Node
+    \resumeSubheading
+      {Copypants Creator Technologies}{Vancouver, BC}
+      {Machine Learning Scientist}{November 2015 - March 2017}
+      \resumeItemListStart
+        \resumeItem{Image-based Content Retreival}
+          {CNN for extracting and matching images}
+        \resumeItem{Attentive Image Patch Matching}
+          {Reinforcement learning agent for finding corresponding image patches in image pairs}
+        \resumeItem{Data Collection and Processing}
+          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Lightpath Imaging Labs}{Surrey, BC}
+      {Machine Learning Scientist}{April 2015 - November 2015}
+      \resumeItemListStart
+        \resumeItem{Machine Learning}
+          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
+        \resumeItem{Software Development}
+          {Python backend for a web application used by hedge fund managers for portfolio management.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
 
 \section{Education}
-Ph.D.
-				\href{http://www.ubc.ca/}{\textbf{University~of~British~Columbia}} \hfill \textbf{2010-2015} \\
-				\href{http://www.ece.ubc.ca/}{Electrical and Computer Engineering} \\
-        Thesis: \href{https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0166782}{Image-based Guidance for Prostate Interventions} \\
-        Adviser: \href{http://www.ece.ubc.ca/~purang/}{Dr. Purang~Abolmaesumi} \\
+  \resumeSubHeadingListStart
+    \educationSubheading
+      {University of British Columboa}{Vancouver, BC}
+      {PhD; Electrical and Computer Engineering}{September 2010 -- September 2015}
+      {Image-based Guidance for Prostate Interventions}
+    \educationSubheading
+      {Queens University}{Kingston, ON}
+      {MSc; Electrical and Computer Engineering}{September 2008 -- September 2010}
+      {Biomechanically Constrained Groupwise Statistical Shape Model\\to Ultrasound Registration of the Lumbar Spine}
+    \educationSubheading
+      {Amirkabir University of Technology}{Tehran, Iran}
+      {BSc; Electrical Engineering}{September 2004 -- September 2008}
+      {Logo Classification Using Neural Networks}
+  \resumeSubHeadingListEnd
 
-M.Sc.
-				\href{http://www.queensu.ca/}{\textbf{Queen's~University}} \hfill \textbf{2008-2010}\\
-        \href{http://www.ece.queensu.ca/}{Electrical and Computer Engineering} \\
+\section{Open Source Projects}
+  \resumeSubHeadingListStart
+   \resumeSubItem{PyCPD}
+     {PyCPD is a numpy implementation of the coherent point drift algorithm used for point cloud registration.}
+   \resumeSubItem{Gym-MNIST-Pair}
+     {An OpenAI gym environment for training a reinforcement learning  agent to find matching patches in two identical translated MNIST pairs.}
+   \resumeSubItem{GMM-FEM}
+     {GMM-FEM is a point cloud registration technique based on Gaussian mixtures and regularized using biomechanical finite element models.}
+  \resumeSubHeadingListEnd
 
-B.Sc.
-				\href{http://aut.ac.ir/www/aut/main/}{\textbf{Amirkabir~University~of~Technology}} \hfill \textbf{2004-2008}\\
-        \href{http://ee.aut.ac.ir/autcms/home.htm?depurl=electrical-engineering&lang=en}{Electrical Engineering}
+\section{Journals}
+  \publicationSubheadingListStart
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Statistical Biomechanical Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}
+      {IEEE Transactions on Medical Imaging (TMI)}{2015}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Biomechanically Constrained Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}
+      {IEEE Transactions on Medical Imaging (TMI)}{2015}
+    \publicationSubItem {Fedorv, \textbf{Khallaghi}}
+      {Open-source Image Registration for MRI-TRUS Fusion-guided Prostate Interventions}
+      {International Journal of Computer Assisted Radiology and Surgery (IJCARS)}{2015}
+    \publicationSubItem{Ashab, Lessoway, \textbf{Khallaghi}}
+      {An Augmented Reality System for Epidural Anesthesia (AREA): Prepuncture Identification of Vertebrae}
+      {IEEE Transactions on Biomedical Engineering (TBME)}{2013}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Experimental Validation of an Intrasubject Elastic Registration Algorithm for Dynamic-3D Ultrasound Images}
+      {Medical Physics}{2012}
+  \publicationSubheadingListEnd
 
-\section{Selected Publications}
-\begin{bibsection}
-		\item Khallaghi~\textit{et.~al.}, ``\textit{Statistical Biomechanical Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}'', \textbf{IEEE TMI}, 2015
-	  \item Khallaghi~\textit{et.~al.}, ``\textit{Biomechanically Constrained Surface Registration: Application to MR-TRUS Fusion for Prostate Interventions}'', \textbf{IEEE TMI}, 2015
-	  \item Khallaghi~\textit{et.~al.}, ``\textit{A 2D-3D Registration Framework for Freehand TRUS-Guided Prostate Biopsy}'', \textbf{MICCAI}, 2015
-\end{bibsection}
+\section{Conferences}
+  \publicationSubheadingListStart
+    \publicationSubItem{Imani, Abolmaesumi, Ghavidel, \textbf{Khallaghi}}
+      {Fusion of Multi-parametric MRI and Temporal Ultrasound for Characterization of Prostate Cancer: In-vivo Feasibility Study}
+      {SPIE Medical Imaging}{2016}
+    \publicationSubItem{Ghavidel, Imani, Abolmaesumi, \textbf{Khallaghi}}
+      {Classification of prostate cancer grade using temporal ultrasound: in vivo feasibility study}
+      {SPIE Medical Imaging}{2016}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {A 2D-3D Registration Framework for Freehand TRUS-Guided Prostate Biopsy}
+      {Medical Image Computing and Computer Assisted Interventions (MICCAI)}{2015}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Motion and Deformation Compensation for Freehand Prostate Biopsies}
+      {SPIE Medical Imaging}{2014}
+    \publicationSubItem{Afsham, \textbf{Khallaghi}}
+      {Filter-Based Speckle Tracking for Freehand Prostate Biopsy: Theory, Ex-vivo and In-vivo Results}
+      {Information Processing in Computer-Assisted Interventions (IPCAI)}{2014}
+    \publicationSubItem{Ashab, Lessoway, \textbf{Khallaghi}}
+      {An Augmented Reality System for Epidural Anesthesia (AREA)}
+      {IEEE Engineering in Medicine and Biology Society (EMBC)}{2012}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Biomechanically Constrained Groupwise Statistical Shape Model to Ultrasound Registration of the Lumbar Spine}
+      {Information Processing in Computer-Assisted Interventions (IPCAI)}{2011}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {GPU Accelerated Registration of a Statistical Shape Model of the Lumbar Spine to 3D Ultrasound Images}
+      {SPIE Medical Imaging}{2011}
+    \publicationSubItem{\textbf{Khallaghi}}
+      {Registration of a Statistical Shape Model of the Lumbar Spine to 3D Ultrasound Images}
+      {Medical Image Computing and Computer Assisted Interventions (MICCAI)}{2010}
+  \publicationSubheadingListEnd
 
-\section{Honors and Awards}
-\href{https://www.grad.ubc.ca/awards/graduate-support-initiative-gsi-awards}{UBC Faculty of Applied Science Graduate Award} \hfill \textbf{2010-2015}\\
-\href{http://www.queensu.ca/studentawards/financialassistance/generalbursary.html}{Queen's University General Bursary} \hfill \textbf{2008-2010}
+\section{Technical Review}
+  \resumeSubHeadingListStart
+    \reviewItem{IEEE Transactions on Medical Imaging (TMI)}
+    \reviewItem{IEEE Transactions on Biomedical Engineering (TBME)}
+    \reviewItem{International Journal of Computer Assisted Radiology and Surgery (IJCARS)}
+    \reviewItem{Medical Physics}
+    \reviewItem{Medical Image Computing and Computer Assisted Interventions (MICCAI)}
+  \resumeSubHeadingListEnd
 
-\section{References Available to Contact}
-\href{http://www.ece.ubc.ca/~purang/}{\textbf{Dr.~Purang~Abolmaesumi}}
-(e-mail:~\href{mailto:purang@ece.ubc.ca}{purang@ece.ubc.ca}; phone:~604-827-4741)
-%
-\begin{innerlist}
-    \item Professor,
-        \href{http://www.ece.ubc.ca/}{Electrical and Computer
-        Engineering},
-        \href{http://www.ubc.ca/}{University~of~British~Columbia}
-
-    \item[$\diamond$] Kaiser 4052, 2332 Main Mall, Vancouver, BC, Canada, V6T 1Z4
-
-    \item[$\star$] \emph{Dr.~Abolmaesumi was my Ph.D. and M.Sc. adviser.}
-\end{innerlist}
+  \section{Invited Talks}
+    \resumeSubHeadingListStart
+      \reviewItem{Image-based Guidance for Prostate Interventions, Siemens Corporate Research, Princeton, NJ, 2017}
+      \reviewItem{Probabilistic Point Cloud Registration, University of British Columbia, Vancouver, BC, 2016}
+    \resumeSubHeadingListEnd
 
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

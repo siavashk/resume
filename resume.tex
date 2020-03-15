@@ -55,7 +55,7 @@
 
 \newcommand{\publicationItem}[4]{
   \item\small{
-    {#1}{ et al., #2\vspace{-2pt}}{, \textit{#3}\vspace{-2pt}}{, #4\vspace{-2pt}}
+    {#1}{ et al., #2}{, \textit{#3}}{, #4}
   }
 }
 
@@ -94,41 +94,51 @@
 \begin{document}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Siavash Khallaghi}} & Email: \href{mailto:khallagh65@gmail.com}{khallagh65@gmail.com}\\
+  \textbf{\href{http://siavashk.github.io/}{\Large Siavash Khallaghi}} & Email: \href{mailto:khallagh65@gmail.com}{khallagh65@gmail.com}\\
 \end{tabular*}
 
 \section{Professional Skills}
   \resumeSubHeadingListStart
-    \resumeSubItem{Research}{Registration, Medical Image Processing, Computer Vision, Machine Learning}
+    \resumeSubItem{Research}{Machine Learning, Computer Vision, Medical Image Processing, Registration}
     \resumeSubItem{Languages}{C++, Python}
-    \resumeSubItem{Frameworks}{Insight Toolkit (ITK), Qt, Tensorflow}
+    \resumeSubItem{Frameworks}{PyTorch, Tensorflow, Insight Toolkit, Qt}
     \resumeSubItem{Version Control and Project Configuration}{Git, CMake}
   \resumeSubHeadingListEnd
 
 \section{Experience}
   \resumeSubHeadingListStart
+  \resumeSubheading
+    {Huawei Technologies Canada}{Burnaby, BC}
+    {Senior Computer Vision Researcher}{July 2019 - Present}
+    \resumeItemListStart
+      \resumeItem{Semantic Video Segmentation}{Details subject to non-disclosure agreement.}
+      \resumeItem{Human Instance Segmentation}{Details subject to non-disclosure agreement.}
+    \resumeItemListEnd
+
     \resumeSubheading
       {Clarius Mobile Health}{Vancouver, BC}
-      {Research Engineer}{March 2017 - Present}
+      {Research Engineer}{March 2017 - July 2019}
       \resumeItemListStart
-        \resumeItem{Neural Nerve Segmentation (in progress)}
-          {Implemented a Django webapp for ultrasound annotation. Trained a U-Net model to predict nerve locations in ultrasound.}
+        \resumeItem{Clarius AI (product)}
+          {Django webapp for annotating, training and deploying machine learning models.}
+        \resumeItem{Neural Nerve Segmentation (product)}
+            {Trained a U-Net model to predict nerve locations in ultrasound.}
         \resumeItem{Semiautomatic Ultrasound Segmentation (patent pending)}
-          {Implemented a region growing method for segmenting follicles and bladder in ultraosound.}
-        \resumeItem{Virtual Demo Probe (patent pending)}
-          {Created a video source for emulating an ultrasound probe for evaluating features and testing algorithms.}
+          {Region growing method for follicle and bladder segmentation.}
+        \resumeItem{Virtual Demo Probe (patent US2019/0043387A1)}
+          {Video source for emulating an ultrasound probe for evaluating features and testing algorithms.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Copypants Creator Technologies}{Vancouver, BC}
+      {Copypants Creator Technologies (Acquired by Xperi)}{Vancouver, BC}
       {Machine Learning Scientist}{November 2015 - March 2017}
       \resumeItemListStart
         \resumeItem{Neural Image Matching}
-          {Designed and trained a siamese CNN to extract features and perform binary classification on image pairs.}
+          {Siamese CNN for feature extraction and binary classification on image pairs.}
         \resumeItem{Attentive Patch Matching}
-          {Trained a reinforcement learning agent to find matching image patches using DQN.}
-        \resumeItem{Data Collection and Processing}
-          {Created data preprocessing, labelling, training and evaluation pipelines for training networks on images crawled from the internet.}
+          {Reinforcement learning agent for finding matching image patches using DQN.}
+        \resumeItem{Backpocket}
+          {Labelling, training and evaluation pipeline for training networks on web-crawled images.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -136,9 +146,9 @@
       {Machine Learning Scientist}{April 2015 - November 2015}
       \resumeItemListStart
         \resumeItem{Digital Staining}
-          {Investigated the feasibility of supervised learning methods for generating stained images from spectral histopathology images.}
+          {Supervised learning for generating stained images from spectral histopathology images.}
         \resumeItem{Software Development}
-          {Created a front-end image viewer for displaying histopathology images.}
+          {Image viewer for displaying histopathology images using VTK and OpenSlide.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -161,14 +171,12 @@
 
 \section{Github Open Source Projects}
   \resumeSubHeadingListStart
-   \resumeSubItem{PyCPD}
-     {PyCPD is a numpy implementation of the coherent point drift algorithm used for point cloud registration.}
-   \resumeSubItem{Gym-MNIST-Pair}
-     {An OpenAI gym environment for training a reinforcement learning  agent to find matching patches in two identical translated MNIST pairs.}
-   \resumeSubItem{GMM-FEM}
-     {GMM-FEM is a point cloud registration technique based on Gaussian mixtures and regularized using biomechanical finite element models.}
-    \resumeSubItem{IFEC}
-    {IFEC is a forward error correction study for transmitting images across a noisy channel using fountain codes.}
+   \resumeSubItem{PyCPD (180 stars)}
+     {Numpy implementation of the coherent point drift algorithm for point cloud registration.}
+   \resumeSubItem{GMM-FEM (thesis)}
+       {Point cloud registration technique based on Gaussian mixtures and finite element models.}
+   \resumeSubItem{Gym-MNIST-Pair (hobby)}
+     {OpenAI gym environment for reinforcement learning to find matching patches in affNist.}
   \resumeSubHeadingListEnd
 
 \section{Journals}
@@ -227,14 +235,6 @@
     \reviewItem{Probabilistic Point Cloud Registration, University of British Columbia, Vancouver, BC, 2016}
   \resumeSubHeadingListEnd
 
-\section{Honors and Awards}
-  \resumeSubHeadingListStart
-    \reviewItem{Student travel award, MICCAI, Munich, Germany, 2015}
-    \reviewItem{Graduate student initiative award (GSI), University of British Columbia, Vancouver, BC, 2011-2014}
-    \reviewItem{General bursary, Queen's University, Kingston, ON, 2010}
-    \reviewItem{Winter olympics torchbearer, Queen's University, Kingston, ON, 2009}
-  \resumeSubHeadingListEnd
-
 \section{Technical Review}
   \resumeSubHeadingListStart
     \reviewItem{IEEE Transactions on Medical Imaging (TMI)}
@@ -247,8 +247,8 @@
   \section{References}
     \resumeSubHeadingListStart
       \reviewItem{Dr. Purang Abolmaesumi (\href{mailto:purang@ece.ubc.ca}{purang@ece.ubc.ca}) was my PhD advisor.}
+      \reviewItem{Kris Dickie (\href{mailto:kris.dickie@clarius.me}{kris.dickie@clarius.me}) was the VP of research at Clarius.}
       \reviewItem{Christopher Adlparvar (\href{mailto:chrisadlparvar@gmail.com}{chrisadlparvar@gmail.com}) was the CEO of Copypants.}
-      \reviewItem{Marcel Sutanto (\href{mailto:marcelsutanto777@gmail.com}{marcelsutanto777@gmail.com}) was my manager at Lightpath Imaging Labs.}
     \resumeSubHeadingListEnd
 
 \end{document}

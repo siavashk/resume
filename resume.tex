@@ -99,7 +99,7 @@
 
 \section{Professional Skills}
   \resumeSubHeadingListStart
-    \resumeSubItem{Research}{Machine Learning, Computer Vision, Medical Image Processing, Registration}
+    \resumeSubItem{Research}{Machine Learning, Computer Vision, Medical Image Processing, Image Registration}
     \resumeSubItem{Languages}{C++, Python}
     \resumeSubItem{Frameworks}{PyTorch, Tensorflow, Insight Toolkit, Qt}
     \resumeSubItem{Version Control and Project Configuration}{Git, CMake}
@@ -108,8 +108,17 @@
 \section{Experience}
   \resumeSubHeadingListStart
   \resumeSubheading
+    {DarkVision Technologies}{North Vancouver, BC}
+    {Machine Learning Engineer}{August 2020 - Present}
+    \resumeItemListStart
+      \resumeItem{Machine Learning Infrastructure}{Created a suitable infrastructure for training and deploying models to process 300 million images (25 million new images/month) on AWS. }
+      \resumeItem{Improvements to an Existing Surface Model}{Improved the mean IoU from 95\% to 99\% for a semantic segmentation model by analysing failure cases and retraining with additional data.}
+      \resumeItem{Unsupervised Learning}{Trained a Spatial VAE model to create a rotationally disentangled representation of downhole images for clustering purposes.}
+    \resumeItemListEnd
+
+  \resumeSubheading
     {Huawei Technologies Canada}{Burnaby, BC}
-    {Senior Computer Vision Researcher}{July 2019 - Present}
+    {Senior Computer Vision Researcher}{July 2019 - July 2020}
     \resumeItemListStart
       \resumeItem{Semantic Video Segmentation}{Details subject to non-disclosure agreement.}
       \resumeItem{Human Instance Segmentation}{Details subject to non-disclosure agreement.}
@@ -123,7 +132,7 @@
           {Django webapp for annotating, training and deploying machine learning models.}
         \resumeItem{Neural Nerve Segmentation (product)}
             {Trained a U-Net model to predict nerve locations in ultrasound.}
-        \resumeItem{Semiautomatic Ultrasound Segmentation (patent pending)}
+        \resumeItem{Semiautomatic Ultrasound Segmentation (patent US 2020/0265577A1)}
           {Region growing method for follicle and bladder segmentation.}
         \resumeItem{Virtual Demo Probe (patent US2019/0043387A1)}
           {Video source for emulating an ultrasound probe for evaluating features and testing algorithms.}
@@ -171,7 +180,7 @@
 
 \section{Github Open Source Projects}
   \resumeSubHeadingListStart
-   \resumeSubItem{PyCPD (180 stars)}
+   \resumeSubItem{PyCPD (240 stars)}
      {Numpy implementation of the coherent point drift algorithm for point cloud registration.}
    \resumeSubItem{GMM-FEM (thesis)}
        {Point cloud registration technique based on Gaussian mixtures and finite element models.}
@@ -238,9 +247,6 @@
 \section{Technical Review}
   \resumeSubHeadingListStart
     \reviewItem{IEEE Transactions on Medical Imaging (TMI)}
-    \reviewItem{IEEE Transactions on Biomedical Engineering (TBME)}
-    \reviewItem{International Journal of Computer Assisted Radiology and Surgery (IJCARS)}
-    \reviewItem{Medical Physics}
     \reviewItem{Medical Image Computing and Computer Assisted Interventions (MICCAI)}
   \resumeSubHeadingListEnd
 
@@ -248,7 +254,6 @@
     \resumeSubHeadingListStart
       \reviewItem{Dr. Purang Abolmaesumi (\href{mailto:purang@ece.ubc.ca}{purang@ece.ubc.ca}) was my PhD advisor.}
       \reviewItem{Kris Dickie (\href{mailto:kris.dickie@clarius.me}{kris.dickie@clarius.me}) was the VP of research at Clarius.}
-      \reviewItem{Christopher Adlparvar (\href{mailto:chrisadlparvar@gmail.com}{chrisadlparvar@gmail.com}) was the CEO of Copypants.}
     \resumeSubHeadingListEnd
 
 \end{document}
